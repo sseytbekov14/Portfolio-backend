@@ -3,8 +3,8 @@ spring:
     name: portfolio
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:portfolio_db}
-    username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:postgres}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -25,10 +25,14 @@ server:
   port: 1414
 
 jwt:
-  secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:86400000}
 
 cloudinary:
-  cloud-name: ${CLOUDINARY_CLOUD_NAME:dchgx5lme}
-  api-key: ${CLOUDINARY_API_KEY:796484321815362}
-  api-secret: ${CLOUDINARY_API_SECRET:EIFTScrWH64J2QmunVL3yKyknAo}
+  cloud-name: ${CLOUDINARY_CLOUD_NAME}
+  api-key: ${CLOUDINARY_API_KEY}
+  api-secret: ${CLOUDINARY_API_SECRET}
+
+admin:
+  username: ${ADMIN_USERNAME:admin}
+  password: ${ADMIN_PASSWORD}
